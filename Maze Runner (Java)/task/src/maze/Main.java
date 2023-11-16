@@ -1,9 +1,16 @@
 package maze;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int rows = scanner.nextInt();
+        int cols = scanner.nextInt();
 
-        Maze maze = new Maze();
+        Maze maze = new Maze(rows,cols);
+
+        maze.generateMaze();
 
         maze.printMaze();
     }
