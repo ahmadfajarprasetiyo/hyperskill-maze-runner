@@ -1,9 +1,10 @@
 package maze;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.*;
 
 class Maze {
     int[][] maze;
@@ -12,6 +13,9 @@ class Maze {
 
     Random random;
 
+    Maze() {
+        this(0,0);
+    }
     Maze(int rows, int cols) {
         this.rows = rows;
         this.cols = cols;
@@ -132,6 +136,53 @@ class Maze {
         }
 
 
+    }
+
+    void loadMaze() {
+
+        Scanner scannerSystemIn = new Scanner(System.in);
+        String fileName = scannerSystemIn.nextLine();
+
+        File file = new File(fileName);
+
+        try (Scanner scanner = new Scanner(file)) {
+            int sizeMaze = scanner.nextInt();
+            int[][] mazeLoad = new int[sizeMaze][sizeMaze];
+            for(int i = 0; i < sizeMaze; i++) {
+                for(int j = 0; j < sizeMaze; j++) {
+                    mazeLoad[i][j] = scanner.nextInt();
+                }
+            }
+
+            this.rows = sizeMaze;
+            this.cols = sizeMaze;
+            this.maze = mazeLoad;
+        } catch (FileNotFoundException e) {
+            System.out.println("The file " + fileName + " does not exist");
+        } catch (Exception e) {
+            System.out.println("Cannot load the maze. It has an invalid format");
+        }
+    }
+
+    void saveMaze() {
+
+        Scanner scanner = new Scanner(System.in);
+        String fileName = scanner.nextLine();
+
+        File file = new File(fileName);
+
+        try (PrintWriter printWriter = new PrintWriter(file)) {
+            printWriter.println(this.rows);
+            for (int[] ints : this.maze) {
+                for (int anInt : ints) {
+                    printWriter.print(anInt);
+                    printWriter.print(" ");
+                }
+                printWriter.println();
+            }
+        } catch (IOException e) {
+            System.out.printf("An exception occurred %s", e.getMessage());
+        }
     }
 
     void printMaze() {
