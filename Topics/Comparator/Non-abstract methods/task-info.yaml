@@ -1,0 +1,31 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: reverseOrder
+  - text: comparingInt
+  - text: compare
+  - text: comparingString
+  - text: naturalOrder
+files:
+  - name: src/Task.java
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      public class Task {
+        public static void main(String[] args) {
+          // put your code here
+        }
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/12968#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 22 Nov 2023 07:02:08 UTC"
+record: -1
+selected_options:
+  - 0
+  - 1
+  - 4
+local_check: false
