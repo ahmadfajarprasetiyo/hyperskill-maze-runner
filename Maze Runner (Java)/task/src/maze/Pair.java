@@ -16,4 +16,8 @@ public class Pair {
     public int getSecond() {
         return second;
     }
+
+    public boolean equals(Pair pair) {
+        return (this.getFirst() == pair.getFirst() && this.getSecond() == pair.getSecond());
+    }
 }

@@ -9,6 +9,7 @@ public class Main {
         final int ACTION_LOAD_MAZE = 2;
         final int ACTION_SAVE_MAZE = 3;
         final int ACTION_DISPLAY_MAZE = 4;
+        final int ACTION_FIND_ESCAPE = 5;
 
         Scanner scanner = new Scanner(System.in);
         Maze maze = null;
@@ -24,6 +25,7 @@ public class Main {
             if(maze != null) {
                 System.out.println("3. Save the maze");
                 System.out.println("4. Display the maze");
+                System.out.println("5. Find the escape");
             }
 
             System.out.println("0. Exit");
@@ -50,6 +52,12 @@ public class Main {
                 }
                 case ACTION_DISPLAY_MAZE -> {
                     if(maze != null) {
+                        maze.printMaze();
+                    }
+                }
+                case ACTION_FIND_ESCAPE -> {
+                    if(maze != null) {
+                        maze.findTheEscape();
                         maze.printMaze();
                     }
                 }

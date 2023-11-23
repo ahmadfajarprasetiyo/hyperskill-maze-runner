@@ -11,6 +11,9 @@ class Maze {
     int rows;
     int cols;
 
+    Pair entrance;
+    Pair exit;
+
     Random random;
 
     Maze() {
@@ -101,12 +104,28 @@ class Maze {
         return ((rows >= 0) && (rows < this.rows) && (cols >= 0) && (cols < this.cols));
     }
 
+    void findEntranceAndExit() {
+        for(int i = 0; i < this.rows - 1; i++) {
+            if(maze[i][0] == 0) {
+                entrance = new Pair(i, 0);
+                break;
+            }
+        }
+
+        for(int i = 0; i < this.rows - 1; i++) {
+            if(maze[i][this.cols-1] == 0) {
+                exit = new Pair(i, this.cols - 1);
+                break;
+            }
+        }
+    }
     void makeEntranceAndExit() {
         int entranceIndex = 0;
         for(int i = 1; i < this.rows - 1; i++) {
             if(maze[i][1] == 0) {
                 maze[i][0] = 0;
                 entranceIndex = i;
+                entrance = new Pair(i, 0);
                 break;
             }
         }
@@ -118,6 +137,7 @@ class Maze {
 
             if(maze[i][this.cols-2] == 0) {
                 maze[i][this.cols-1] = 0;
+                exit = new Pair(i, this.cols - 1);
                 break;
             }
         }
@@ -162,6 +182,8 @@ class Maze {
         } catch (Exception e) {
             System.out.println("Cannot load the maze. It has an invalid format");
         }
+
+        findEntranceAndExit();
     }
 
     void saveMaze() {
@@ -185,13 +207,51 @@ class Maze {
         }
     }
 
+    void findTheEscape() {
+        maze[entrance.getFirst()][entrance.getSecond()] = 2;
+        this.DFS(entrance.getFirst(), entrance.getSecond(), exit.getFirst(), exit.getSecond());
+    }
+
+    boolean DFS(int row, int col, int exitRow, int exitCol) {
+        int[] dRows = new int[]{0,-1,0,1};
+        int[] dCols = new int[]{-1,0,1,0};
+
+        if (row == exitRow && col == exitCol) {
+            maze[row][col] = 2;
+            return true;
+        }
+
+        for (int i = 0; i < 4; i++) {
+            int rowTemp = row+dRows[i];
+            int colTemp = col+dCols[i];
+
+            if (!this.isValidCoordinate(rowTemp, colTemp)) {
+                continue;
+            }
+
+            if (maze[rowTemp][colTemp] == 0) {
+                maze[rowTemp][colTemp] = 10;
+                boolean res = this.DFS(rowTemp, colTemp, exitRow, exitCol);
+
+                if (res) {
+                    maze[rowTemp][colTemp] = 2;
+                    return true;
+                }
+            }
+        }
+
+        return false;
+
+
+    }
+
     void printMaze() {
         for (int[] ints : this.maze) {
             for (int anInt : ints) {
-                if (anInt == 1) {
-                    Maze.printWall();
-                } else {
-                    System.out.print("  ");
+                switch (anInt) {
+                    case 0,10 -> System.out.print("  ");
+                    case 1,11 -> Maze.printWall();
+                    case 2 -> System.out.print("//");
                 }
             }
             System.out.println(); // Move to the next line after each row
