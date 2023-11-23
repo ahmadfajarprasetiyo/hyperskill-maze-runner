@@ -1,0 +1,21 @@
+type: code
+files:
+  - name: src/Main.java
+    visible: true
+    text: "import java.util.*;\n\npublic class Main {\n    public static void main(String[]\
+    \ args) {\n        Scanner scanner = new Scanner(System.in);\n        Queue<Integer>\
+    \ queue = createQueue(scanner);\n\n        printElement(queue, scanner.nextInt());\n\
+    \    }\n\n    public static Queue<Integer> createQueue(Scanner scanner) {\n  \
+    \      Queue<Integer> queue = new PriorityQueue();\n        queue.add(scanner.nextInt());\n\
+    \        queue.add(scanner.nextInt());\n        queue.add(scanner.nextInt());\n\
+    \        queue.add(scanner.nextInt());\n\n        return queue;\n    }\n\n   \
+    \ public static void printElement(Queue<Integer> queue, int n) {\n        // write\
+    \ your code here\n    }    \n}"
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20184#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 23 Nov 2023 00:49:28 UTC"
+record: -1
+submission_language: java17

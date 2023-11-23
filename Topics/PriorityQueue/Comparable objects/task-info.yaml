@@ -1,4 +1,10 @@
-type: table
+type: choice
+is_multiple_choice: false
+options:
+  - text: Ordering by object size
+  - text: LIFO
+  - text: FIFO
+  - text: Natural ordering
 files:
   - name: src/Task.java
     visible: true
@@ -11,23 +17,12 @@ files:
         }
       }
     learner_created: false
-feedback_link: https://hyperskill.org/learn/step/12976#comment
+feedback_link: https://hyperskill.org/learn/step/20180#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: "Wed, 22 Nov 2023 06:59:57 UTC"
+  time: "Thu, 23 Nov 2023 00:42:00 UTC"
 record: -1
-rows:
-  - Rating
-  - VideoGame
-  - Customer
-columns:
-  - Comparable
-  - Comparator
-selected:
-  - - false
-    - false
-  - - false
-    - false
-  - - false
-    - false
+selected_options:
+  - 3
+local_check: false

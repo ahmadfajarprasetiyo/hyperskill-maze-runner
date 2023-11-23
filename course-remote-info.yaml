@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://cogniterra.org/media/attachments/lesson/23029/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Wed, 22 Nov 2023 06:57:53 UTC"
+update_date: "Thu, 23 Nov 2023 22:27:12 UTC"
 stages:
   - id: 251
     step: 5393
@@ -32,7 +32,7 @@ topics:
     - title: Immutability
       theory_id: 7929
     - title: Introduction to Java
-      theory_id: 3500
+      theory_id: 38627
     - title: "Basic literals: numbers, strings and characters"
       theory_id: 3522
     - title: Writing first program
@@ -87,8 +87,6 @@ topics:
       theory_id: 5035
     - title: Array
       theory_id: 3511
-    - title: Iterating over arrays
-      theory_id: 3602
     - title: Characters
       theory_id: 3514
     - title: String
@@ -99,6 +97,8 @@ topics:
       theory_id: 3497
     - title: NullPointerException
       theory_id: 1945
+    - title: Iterating over arrays
+      theory_id: 3602
     - title: What is object-oriented programming
       theory_id: 3614
     - title: Running programs on your computer
@@ -140,6 +140,10 @@ topics:
       theory_id: 3621
     - title: Hierarchy of exceptions
       theory_id: 3570
+    - title: Introduction to logging
+      theory_id: 5538
+    - title: Debugging techniques
+      theory_id: 13775
     - title: Graph
       theory_id: 15967
     - title: "Nodes, cycles and paths"
@@ -148,10 +152,6 @@ topics:
       theory_id: 15969
     - title: Weighted graph
       theory_id: 5645
-    - title: Introduction to logging
-      theory_id: 5538
-    - title: Debugging techniques
-      theory_id: 13775
     - title: Sorting problem
       theory_id: 4954
     - title: Recursion basics
@@ -220,14 +220,14 @@ topics:
       theory_id: 3493
     - title: Lambda expressions
       theory_id: 11635
-    - title: What are collections
-      theory_id: 3770
-    - title: The Collections Framework overview
-      theory_id: 3624
     - title: Method references
       theory_id: 3620
     - title: Functional interfaces
       theory_id: 11636
+    - title: What are collections
+      theory_id: 3770
+    - title: The Collections Framework overview
+      theory_id: 3624
     - title: ArrayList
       theory_id: 3567
     - title: The List interface

@@ -7,7 +7,7 @@
         <option name="delegatedBuild" value="false" />
         <option name="distributionType" value="WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="jbr-17" />
+        <option name="gradleJvm" value="#JAVA_INTERNAL" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -23,6 +23,11 @@
             <option value="$PROJECT_DIR$/Topics/Comparator/Non-abstract methods" />
             <option value="$PROJECT_DIR$/Topics/Comparator/Sort users" />
             <option value="$PROJECT_DIR$/Topics/Comparator/Theory" />
+            <option value="$PROJECT_DIR$/Topics/PriorityQueue/Application" />
+            <option value="$PROJECT_DIR$/Topics/PriorityQueue/Biggest prime numbers" />
+            <option value="$PROJECT_DIR$/Topics/PriorityQueue/Comparable objects" />
+            <option value="$PROJECT_DIR$/Topics/PriorityQueue/Strings as custom object fields" />
+            <option value="$PROJECT_DIR$/Topics/PriorityQueue/Theory" />
             <option value="$PROJECT_DIR$/Topics/Stack/Deque output" />
             <option value="$PROJECT_DIR$/Topics/Stack/Match methods" />
             <option value="$PROJECT_DIR$/Topics/Stack/Methods" />
